@@ -56,3 +56,53 @@
 ## 10.`Conclusion:`
 
 * The "Prediction of Doctor Consultation Fees" project aims to create a valuable tool for patients seeking transparent and reliable cost estimates for medical consultations. By leveraging machine learning techniques, the project contributes to informed decision-making in healthcare expenses and potentially facilitates a fairer pricing structure within the medical industry.
+
+
+
+## `Tech Stack Used`
+1. Python 
+2. FlaskAPI 
+3. Machine learning
+4. HTML 
+
+## `Infrastructure Required`
+1. VS Code (you can use any other IDE)
+2. GIT
+3. GITHUB
+4. GIT ACTIONS
+
+## `How to run?`
+This app is now available for offline run as well as Deployed on AWS Beanstalk.
+
+
+### Step 1: Clone the repository
+```bash
+git clone https://github.com/raviteja-padala/Doctor_Consultation_Fee_Predictor.git
+```
+
+### Step 2- Download the code to local and use any IDE for running the code.
+
+### Step 3 - Install the requirements
+```bash
+pip install -r requirements.txt
+```
+
+
+### Step 4 - Run the application server for web app
+```bash
+1. Run application.py
+```
+
+```bash
+2. Open this link in browser: http://127.0.0.1:5000
+```
+
+
+## `Web Application Home Page`
+![image](https://github.com/raviteja-padala/Datasets/blob/main/images/Doctor_consultation_fees.png)
+
+
+Stay Healthy, Stay Happy. <br>
+Thank you.
+
+
