@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Consultation Fee Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            width: 100px;
+            display: inline-block;
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Consultation Fee Predictor</h1>
+        <form method="POST">
+            <fieldset>
+                <legend>Input Features</legend>
+                <div class="form-group">
+                    <label for="speciality">Speciality:</label>
+                    <select name="speciality" id="speciality">
+                        {% for s in specialities %}
+                        <option value="{{ s }}">{{ s }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="zone">Zone:</label>
+                    <select name="zone" id="zone">
+                        {% for z in zones %}
+                        <option value="{{ z }}">{{ z }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="years_of_experience">Years of Experience:</label>
+                    <input type="number" name="years_of_experience" id="years_of_experience" step="1" min="0" max="50" value="1">
+                </div>
+            </fieldset>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        {% if predicted_fee is not none %}
+        <fieldset>
+            <legend>Predicted Consultation Fee</legend>
+            <p>Amount is ₹{{ predicted_fee|round(2) }}</p>
+        </fieldset>
+        {% endif %}
+    </div>
+
+</body>
+</html>
